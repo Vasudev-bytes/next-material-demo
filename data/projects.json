@@ -1,0 +1,20 @@
+[
+    {
+        "id": "123456789",
+        "address": "Newark, New Jersey",
+        "name": "ProjectName1",
+        "contractor": "ABC Contractor"
+    },
+    {
+        "id": "12000789",
+        "address": "Jersey City, New Jersey",
+        "name": "ProjectName2",
+        "contractor": "Smith Contractor"
+    },
+    {
+        "id": "67897532",
+        "address": "Patterson, New Jersey",
+        "name": "ProjectName3",
+        "contractor": "Qaulity Contractor"
+    }
+]
