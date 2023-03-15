@@ -6,16 +6,16 @@ export default function ProjectsCard({ project }) {
     return (
         <>
             <Box >
-                <Typography gutterBottom variant="h5" component="div">
+                <Typography gutterBottom variant="h6" component="div" className='projectDetails'>
                     {project['name']}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" color="text.secondary" className='projectDetails'>
                     {project['contractor']}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" color="text.secondary" className='projectDetails'>
                     {project['address']}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" color="text.secondary" className='projectDetails'>
                     ID: {project['id']}
                 </Typography>
             </Box>

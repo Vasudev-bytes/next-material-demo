@@ -15,7 +15,7 @@ import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import AddIcon from '@mui/icons-material/Add';
 import LocationSearchingIcon from '@mui/icons-material/LocationSearching';
 import projects from '../../data/projects.json';
-import Card from '../../components/project/ProjectCard';
+import ProjectCard from '../../components/project/ProjectCard';
 
 const Projects = () => {
     const [value, setValue] = React.useState('contracts');
@@ -37,7 +37,7 @@ const Projects = () => {
                         fontFamily: 'monospace', fontWeight: 700, color: 'black',
                         textDecoration: 'none', fontSize: '30px'
                     }}>
-                        ABC Public Dody Page
+                        ABC Public Body Page
                     </Typography>
                 </Toolbar>
                 <Box sx={{ width: '100%' }}>
@@ -72,7 +72,7 @@ const Projects = () => {
                             projects.length > 0 ? (
                                 projects.map((project, index) => (
                                     <Grid key={index} marginTop={2} sx={{ minWidth: '29vw', border: 1, borderRadius: 1, borderColor: 'lightgray', 'p': 2, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                                        <Card project={project} key={index} />
+                                        <ProjectCard project={project} key={index} />
                                     </Grid>
                                 ))
                             ) : (
