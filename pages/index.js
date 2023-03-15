@@ -1,9 +1,8 @@
 import Head from 'next/head'
-import { join } from 'path';
-import Navbar from '../components/Navbar';
-import Card from '../components/Card';
-import { Container, Grid } from '@mui/material';
-import projects from '../data/projects.json';
+import { Container } from '@mui/material';
+import Navbar from '../components/layouts/Navbar';
+import Footer from '../components/layouts/Footer';
+import Register from '../components/auth/Register';
 
 export default function Home() {
   return (
@@ -13,11 +12,11 @@ export default function Home() {
         <meta name="description" content="Demo app with Material UI" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <Navbar />
-
+      <Navbar isLoggedIn={false} />
       <Container>
+        <Register />
       </Container>
+      <Footer />
     </div>
   )
 }

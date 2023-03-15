@@ -9,12 +9,13 @@ import {
     Tab,
     Toolbar
 } from '@mui/material';
-import Navbar from '../../components/Navbar';
+import Navbar from '../../components/layouts/Navbar';
+import Footer from '../../components/layouts/Footer';
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import AddIcon from '@mui/icons-material/Add';
 import LocationSearchingIcon from '@mui/icons-material/LocationSearching';
 import projects from '../../data/projects.json';
-import Card from '../../components/Card';
+import Card from '../../components/project/ProjectCard';
 
 const Projects = () => {
     const [value, setValue] = React.useState('contracts');
@@ -25,14 +26,14 @@ const Projects = () => {
 
     return (
         <>
-            <Navbar />
+            <Navbar isLoggedIn={true} />
             <Container sx={{ marginTop: '20px' }}>
                 <Toolbar disableGutters>
                     <Box className='buildWrapper'>
-                        <AccountBalanceIcon className='buildIcon' sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, color: 'gray' }} />
+                        <AccountBalanceIcon className='buildIcon' sx={{ display: { xs: 'flex', md: 'flex' }, mr: 1, color: 'gray' }} />
                     </Box>
                     <Typography variant="h6" noWrap component="a" sx={{
-                        mr: 2, display: { xs: 'none', md: 'flex' },
+                        mr: 2, display: { xs: 'flex', md: 'flex' },
                         fontFamily: 'monospace', fontWeight: 700, color: 'black',
                         textDecoration: 'none', fontSize: '30px'
                     }}>
@@ -53,14 +54,16 @@ const Projects = () => {
                     </Tabs>
                 </Box>
                 {value === 'contracts' &&
-                    <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
-                        <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-                            <p>View/add contracts and see certified payroll for your projects here</p>
-                        </Box>
-                        <Box sx={{ display: 'flex', justifyContent: 'center', gap: '12px' }}>
-                            <Button variant="contained" startIcon={<AddIcon sx={{ color: 'black' }} />} sx={{ bgcolor: 'lightgray' }}>Add Contract</Button>
-                            <Button variant="contained" startIcon={<LocationSearchingIcon sx={{ color: 'black' }} />} sx={{ bgcolor: 'lightgray' }}>Find Contract</Button>
-                        </Box>
+                    <Box>
+                        <Grid container spacing={2}>
+                            <Grid item xs={12} md={6}>
+                                <p>View/add contracts and see certified payroll for your projects here</p>
+                            </Grid>
+                            <Grid item xs={12} md={6} sx={{ display: 'flex', justifyContent: { xs: 'normal', md: 'right' }, flexGrow: 1, alignItems: 'center' }}>
+                                <Button variant="contained" startIcon={<AddIcon sx={{ color: 'black' }} />} sx={{ bgcolor: 'lightgray' }}>Add Contract</Button>
+                                <Button variant="contained" startIcon={<LocationSearchingIcon sx={{ color: 'black' }} />} sx={{ bgcolor: 'lightgray', ml: '12px' }}>Find Contract</Button>
+                            </Grid>
+                        </Grid>
                     </Box>
                 }
                 {value === 'contracts' &&
@@ -81,6 +84,7 @@ const Projects = () => {
                     </Box>
                 }
             </Container>
+            <Footer />
         </>
     );
 };
